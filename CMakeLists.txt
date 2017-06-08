@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.7)
+project(duelling_idiots)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(BASEBALL baseball.cpp)
+add_executable(DUEL1 duel1.cpp)
+add_executable(DUEL2 duel2.cpp)
+add_executable(GLOW glow.cpp)
+add_executable(GLOW1 glow1.cpp)
+add_executable(GLOW2 glow2.cpp)
+add_executable(OSC_LIM osc_limit.cpp)
+add_executable(SAME_FLIPS sameflips.cpp)
+add_executable(SNOW1 snow1.cpp)
+add_executable(SNOW2 snow2.cpp)
+add_executable(SNOW3 snow3.cpp)
+add_executable(BLIND_SPIDER blind_spider.cpp)
