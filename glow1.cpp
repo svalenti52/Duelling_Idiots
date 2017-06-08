@@ -1,5 +1,9 @@
 /** \file glow1.cpp
+ * \brief A parallel-parallel-series of switches should be closed for a light
+ * bulb to glow.
  *
+ * \details Exactly like glow.cpp except for the outermost layer of switches
+ * being arranged in parallel instead of serially.
  */
 
 // glow1.cpp
@@ -7,14 +11,14 @@
 #include <random>
 #include <iostream>
 
-bool is_series_closed( int nr_switches_per_dim, double ps_closed,
+bool is_series_closed( int nr_switches_per_layer, double ps_closed,
 	std::default_random_engine& dre,
 	std::uniform_real_distribution<double>& uni_dist )
 {
 
 	bool whole_switch_close = true;
 
-	for ( int ix = 0; ix < nr_switches_per_dim; ++ix )
+	for ( int ix = 0; ix < nr_switches_per_layer; ++ix )
 	{
 		auto switch_instance = uni_dist(dre);
 		if ( switch_instance > ps_closed )
@@ -34,7 +38,7 @@ int main(int argc, char* argv[])
 			return 1;
 		}
 
-	int nr_switches_per_dim = std::atoi(argv[1]);
+	int nr_switches_per_layer = std::atoi(argv[1]);
 	double prob_switch_closed = std::atof(argv[2]);
 
 	int nr_trials = 1'000'000;
@@ -45,19 +49,19 @@ int main(int argc, char* argv[])
 
 	for ( int i = 0; i < nr_trials; ++i )
 	{
-		for ( int ix = 0; ix < nr_switches_per_dim; ++ix ) // series
+		for ( int ix = 0; ix < nr_switches_per_layer; ++ix ) // parallel
 		{
-			for ( int jx = 0; jx < nr_switches_per_dim; ++jx ) // parallel
+			for ( int jx = 0; jx < nr_switches_per_layer; ++jx ) // parallel
 			{
 				whole_switch_close =
-					is_series_closed( nr_switches_per_dim,
+					is_series_closed( nr_switches_per_layer,
 						prob_switch_closed,
 						dre, uniform_dist_over_1 );
 				if ( whole_switch_close )
 					break;
 			}
-			if ( whole_switch_close )
-				break;
+			if ( whole_switch_close ) // checking if one switch closed
+				break;                  // instead one switch open
 		}
 
 		if ( whole_switch_close )
