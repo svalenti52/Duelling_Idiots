@@ -3,8 +3,15 @@
  * bulb to glow.
  *
  * \details Same logic as glow.cpp but it introduces some standard algorithms
- * although it still is not as efficient as the glow.cpp. Also have range-
- * based for loops which is superior in that the indexes are unnecessary.
+ * although it still is not as efficient as glow.cpp. Also have range-
+ * based for loops which are superior in that the indexes are unnecessary.
+ * Reads somewhat logically because following the end of each loop is check
+ * for "all_of" in the case of serial switches and "any_of" in the case of
+ * parallel switches. The breaks in the interior serial and parallel loops
+ * save a great deal of time especially as the number of switches per layer
+ * increases. The deque was introduced because the vector<bool> is a special
+ * bit-oriented implementation that cannot be set as reference in the range-
+ * based for loop.
  */
 
 // glow2.cpp
@@ -49,13 +56,11 @@ int main(int argc, char* argv[])
 
 	for ( int i = 0; i < nr_trials; ++i )
 	{
-		std::vector<bool> series_glows;
 
 		for ( bool& exterior_switch : exterior_series_switches.switch_closed ) // series
 		{
 			for ( bool& parallel_switch : parallel_switches.switch_closed ) // parallel
 			{
-
 				for (bool& interior_switch : interior_series_switches.switch_closed )
 				{
 					auto switch_instance = uniform_dist_over_1(dre);
