@@ -6,7 +6,7 @@
  * \brief Duel with alternating shots, but increasing by one
  * the number of consecutive shots a duellist takes on each turn.
  *
- * /details A shoots once, B twice, A three times, B four times till
+ * \details A shoots once, B twice, A three times, B four times till
  * someone is shot. This was created since it was desired to preserve
  * the original algorithm (I introduced a hash table for lookup in
  * duel2.cpp.

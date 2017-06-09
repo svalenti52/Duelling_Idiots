@@ -3,6 +3,7 @@ project(duelling_idiots)
 
 set(CMAKE_CXX_STANDARD 14)
 
+add_executable(EMBARRASSING embarassing.cpp)
 add_executable(BASEBALL baseball.cpp)
 add_executable(DUEL1 duel1.cpp)
 add_executable(DUEL2 duel2.cpp)

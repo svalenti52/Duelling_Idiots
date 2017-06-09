@@ -1,11 +1,11 @@
 /** \file duel1.cpp
- *
+ * \brief Probability that the first of two duellists survives
+ * given an alternating single shot.
  */
-
-// duel1.cpp
 
 #include <random>
 #include <iostream>
+#include "util.h"
 
 int main()
 {
@@ -16,6 +16,8 @@ int main()
     const int nr_trials = 10'000'000;
 
     double player_b_shot = 0.0;
+
+    StopWatch stopWatch;
 
     for ( int ix = 0; ix < nr_trials; ++ix )
     {
@@ -36,6 +38,8 @@ int main()
 
     std::cout << "Probability of A winning = "
         << player_b_shot / static_cast<double>(nr_trials) << '\n';
+
+    stopWatch.stop();
 
     return 0;
 }
