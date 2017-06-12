@@ -14,7 +14,7 @@
 
 #include <random>
 #include <iostream>
-#include "util.h"
+#include <val/util.h>
 
 int who_was_shot(const int shot_nr)
 {

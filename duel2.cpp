@@ -13,7 +13,7 @@
 #include <iostream>
 #include <algorithm>
 #include <unordered_set>
-#include "util.h"
+#include <val/util.h>
 
 enum class Duellist {
     A,

@@ -15,7 +15,7 @@
 
 #include <random>
 #include <iostream>
-#include "util.h"
+#include <val/util.h>
 
 bool is_series_closed( int nr_switches_per_layer, double ps_closed,
 	std::default_random_engine& dre,

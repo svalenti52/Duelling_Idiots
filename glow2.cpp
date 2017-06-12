@@ -20,7 +20,7 @@
 #include <iostream>
 #include <algorithm>
 #include <deque>
-#include "util.h"
+#include <val/util.h>
 
 class Switches {
 public:

@@ -1,5 +1,6 @@
 /** \file embarrassing.cpp
- *
+ * \brief An embarrassing question is asked probabilistically
+ * enabling truth (hopefully) sans embarrassment.
  */
 
 // embarrassing.cpp
@@ -9,6 +10,7 @@
 #include <iostream>
 #include <random>
 #include <algorithm>
+#include <val/util.h>
 
 using namespace std;
 
@@ -42,6 +44,8 @@ int main(int argc, char** argv)
 
     double cumulative_embarrassing = 0.0;
 
+    StopWatch stopWatch;
+
     for (int ix = 0; ix<nr_trials; ++ix) {
 
         for ( int person_idx = 0; person_idx < nr_people; ++person_idx ) {
@@ -69,6 +73,8 @@ int main(int argc, char** argv)
     cout << "According to numbers should be 6230 reported using probabilistic mechanism.\n";
     cout << "It corresponds to an actual figure of 7460 that perform the embarrassing act.\n";
     cout << "out of a population of " << nr_people << " people\n";
+
+    stopWatch.stop();
 
     return 0;
 }

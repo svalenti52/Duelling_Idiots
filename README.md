@@ -14,7 +14,7 @@ Chapter 1. How to Ask an Embarrassing Question
     participant sees the results of the coin toss) - flip the coin once,
     and if it is tails answer the question honestly; if it is heads,
     flip the coin again and answer the question according to the coin.
-    We can test this by Monte Carlo method using Nahin's formala or his
+    We can test this by Monte Carlo method using Nahin's formula or his
     numbers presented in the book.
 
 Chapter 2. When Idiots Duel
@@ -23,7 +23,7 @@ Chapter 2. When Idiots Duel
     is simple alternation of a single shot (first one takes a shot, then
     the other). The objective is to find the probability of the first
     duellist surviving. The other form is the same except for incrementing
-    the number of shots a duellist has on each turn, i.e., A take one shot,
+    the number of shots a duellist has on each turn, i.e., A takes one shot,
     B takes two shots, A takes three shots, etc. until the duel is finished.
     We have the same objective as before.
     
