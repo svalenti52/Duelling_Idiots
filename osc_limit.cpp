@@ -1,5 +1,15 @@
 /** \file osc_limit.cpp
+ * \brief A circuit either decays monotonically or oscillates depending on components.
  *
+ * \details Considers the coefficients of a quadratic equation, Ax^2 + Bx + C
+ * = 0 in trying  * to determine whether a capacitor discharge will decay
+ * monotonically or will  * oscillate. The discriminant should be positive in
+ * the decaying monotonically case. It is calculated for both the partially
+ * and fully random quadratic equation. The partially random refers to the
+ * quadratic equation with x^2 + Bx + C = 0 ( with B and C independently
+ * random over the unit interval). Fully random refers to the quadratic
+ * equation with Ax^2 + Bx + C = 0 ( with A, B, and C independently
+ * random over the unit interval).
  */
 
 // osc_limit.cpp
