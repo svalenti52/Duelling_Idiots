@@ -16,6 +16,8 @@ Chapter 1. How to Ask an Embarrassing Question
     flip the coin again and answer the question according to the coin.
     We can test this by Monte Carlo method using Nahin's formula or his
     numbers presented in the book.
+    
+    Associated file: embarrassing.cpp.
 
 Chapter 2. When Idiots Duel
 
@@ -42,9 +44,15 @@ Chapter 3. Will the Light Bulb Glow?
     of single switch being closed (which applies to all the individual
     switches in the layered arrangement).
     
+    Associated files: glow.cpp, glow1.cpp, and glow2.cpp.
+    
 Chapter 4. The Underdog and the World Series
 
+    Associated file: baseball.cpp.
+
 Chapter 5. The Curious Case of the Snowy Birthdays
+
+    Associated files: snow1.cpp, snow2.cpp, and snow3.cpp.
 
 Chapter 6. When Human Flesh Begins to Fail
 
@@ -63,6 +71,25 @@ Chapter 12. When Negativity is a No-No
 Chapter 13. The Power of Randomness
 
 Chapter 14. The Random Ratio
+
+    A capacitor discharging in the presence of resistance and an inductor
+    will either decay monotonically or with oscillations (an RLC circuit).
+    The characteristic (quadratic) equation associated with the second
+    order differential equation of the RLC circuit has a transient response
+    that decays according to whether the discriminant is positive or
+    negative. It decays monotonically if it is positive, it oscillates if
+    negative.
+    
+    Consider the partially random quadratic formula x^2 + Bx + C = 0. This
+    is a monic polynomial (leading coefficient is one). What is the
+    probability, if B and C are uniformly, and independently, randomly
+    chosen from the unit interval, that the discriminant is positive?
+    
+    Now consider the same question for the totally random quadratic formula:
+    Ax^2 + Bx + C =0. Divide through by A and then consider the discriminant
+    (i.e., is (B/A)^2 > 4(C/A)?).
+    
+    Associated file: osc_limit.cpp.
 
 Chapter 15. An Inconceivable Difficulty
 
