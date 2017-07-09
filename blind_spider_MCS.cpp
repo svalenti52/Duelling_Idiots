@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <val/montecarlo/StateMatrix.h>
+#include <val/montecarlo/Chronology.h>
 
 int main(){
 
@@ -36,7 +37,11 @@ int main(){
 
     std::cout << stateMatrix << '\n';
 
+    StopWatch stopWatch;
+
     stateMatrix.run();
+
+    stopWatch.stop();
 
     stateMatrix.print_results();
 

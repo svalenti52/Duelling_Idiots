@@ -15,7 +15,7 @@
 
 #include <random>
 #include <iostream>
-#include <val/util.h>
+#include <val/montecarlo/Chronology.h>
 
 bool is_series_closed( int nr_switches_per_layer, double ps_closed,
 	std::default_random_engine& dre,

@@ -16,7 +16,8 @@
 
 #include <iostream>
 #include <random>
-#include <val/utilities.hpp>
+//#include <val/utilities.hpp>
+#include <val/montecarlo/Histogram.h>
 
 int main()
 {
@@ -28,8 +29,10 @@ int main()
 	double tot_first_coef = 0.0;
 	double tot_second_coef = 0.0;
 
-	Bins bins1(100, 10.0);
-	Bins bins2(100, 10.0);
+	Histogram<double, double> histogram1(0.0, 100.0, 1.0);
+	Histogram<double, double> histogram2(0.0, 100.0, 1.0);
+	//Bins bins1(100, 10.0);
+	//Bins bins2(100, 10.0);
 
 	double prob_decay_total = 0.0;
 	double prob_decay_partial = 0.0;
@@ -50,15 +53,16 @@ int main()
 		if ( B * B >= 4.0 * C )
 			prob_decay_partial += 1.0;
 
-		bins1.inc_bin_by_val(B/A);
-		bins2.inc_bin_by_val(C/A);
+
+		histogram1.increment_if_in_range(B/A);
+		histogram2.increment_if_in_range(C/A);
 
 		tot_first_coef += B/A;
 		tot_second_coef += C/A;
 	}
 
-	std::cout << "first set of bins\n" << bins1 << "\n\n";
-	std::cout << "second set of bins\n" << bins2 << "\n\n";
+	std::cout << "first set of bins\n" << histogram1 << "\n\n";
+	std::cout << "second set of bins\n" << histogram2 << "\n\n";
 
 	std::cout << "mean first coefficient = " <<
 		tot_first_coef / static_cast<double>(nr_trials) << '\n';
