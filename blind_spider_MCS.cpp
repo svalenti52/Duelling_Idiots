@@ -5,6 +5,7 @@
  *
  */
 
+#include <iostream>
 #include <val/montecarlo/StateMatrix.h>
 
 int main(){
@@ -31,5 +32,12 @@ int main(){
             state8
     };
 
-    StateMatrix stateMatrix(states, 0, 1);
+    StateMatrix stateMatrix(10'000'000, states, 0, 1);
+
+    std::cout << stateMatrix << '\n';
+
+    stateMatrix.run();
+
+    stateMatrix.print_results();
+
 }
