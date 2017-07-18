@@ -9,7 +9,7 @@
  * \details A shoots once, B twice, A three times, B four times till
  * someone is shot. This was created since it was desired to preserve
  * the original algorithm (I introduced a hash table for lookup in
- * duel2.cpp.
+ * duel2.cpp).
  */
 
 #include <random>
