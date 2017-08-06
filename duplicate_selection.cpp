@@ -7,16 +7,16 @@
  *
  * \details The precise number is the number of time prior to repetition. It
  * is possible for the number to be 1 if the second selection is the same
- * number as the first.
+ * number as the first. Part of Chapter 8 - Ball Madness.
  */
 
-#include <val/montecarlo/MonteCarloSim_alpha.h>
+#include <val/montecarlo/MonteCarloSim_beta.h>
 
-using Uniform_Integral = Distribution<int, DistributionType::UniformIntegral>;
+using Uniform_Integral = Distribution<int, std::uniform_int_distribution>;
 
 int main() {
 
-    const int ub_number_selection = 10'000;
+    const int ub_number_selection = 100;
 
     std::vector<int> selection_tracker;
     for ( int ix = 0; ix < ub_number_selection; ++ix )
@@ -40,7 +40,7 @@ int main() {
         return true;
     };
 
-    MonteCarloSimulation<int, double, DistributionType::UniformIntegral>
+    MonteCarloSimulation<int, double, std::uniform_int_distribution>
             monteCarloSimulation(
                     100'000,
                     373,
@@ -53,4 +53,5 @@ int main() {
     monteCarloSimulation.change_message("Average number of selections till first duplicate = ");
 
     monteCarloSimulation.print_result();
+
 }
