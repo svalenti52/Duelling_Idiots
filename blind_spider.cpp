@@ -34,7 +34,7 @@ int main() {
 
     for ( int ix =0; ix < nr_trials; ++ix ) {
         double nr_transitions = 0.0;
-        int nr_current_transitions = static_cast<int>(state_matrix[current_state].size());
+        auto nr_current_transitions = static_cast<int>(state_matrix[current_state].size());
         while ( current_state != absorb_state ) {
             uniform_int_distribution<int> uid(0, nr_current_transitions-1);
             int selected_node = state_matrix[current_state][uid(dre)];
