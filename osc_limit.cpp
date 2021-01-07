@@ -29,7 +29,7 @@ int main()
 	double tot_first_coef = 0.0;
 	double tot_second_coef = 0.0;
 
-	Histogram<double, double> histogram1(0.0, 100.0, 1.0);
+	Histogram<double, double> histogram1(0.0, 200.0, 8.0);
 	Histogram<double, double> histogram2(0.0, 100.0, 1.0);
 	//Bins bins1(100, 10.0);
 	//Bins bins2(100, 10.0);
@@ -54,6 +54,7 @@ int main()
 			prob_decay_partial += 1.0;
 
 
+
 		histogram1.increment_if_in_range(B/A);
 		histogram2.increment_if_in_range(C/A);
 
@@ -62,7 +63,7 @@ int main()
 	}
 
 	std::cout << "first set of bins\n" << histogram1 << "\n\n";
-	std::cout << "second set of bins\n" << histogram2 << "\n\n";
+//	std::cout << "second set of bins\n" << histogram2 << "\n\n";
 
 	std::cout << "mean first coefficient = " <<
 		tot_first_coef / static_cast<double>(nr_trials) << '\n';
