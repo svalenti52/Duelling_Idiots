@@ -28,6 +28,8 @@ Chapter 2. When Idiots Duel
     the number of shots a duellist has on each turn, i.e., A takes one shot,
     B takes two shots, A takes three shots, etc. until the duel is finished.
     We have the same objective as before.
+
+    Associated files: duel1.cpp, duel2.cpp, duel3.cpp
     
 Chapter 3. Will the Light Bulb Glow?
 
