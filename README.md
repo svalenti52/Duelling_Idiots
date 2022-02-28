@@ -62,6 +62,17 @@ Chapter 7. Baseball Again, and Mortal Flesh, Too
 
 Chapter 8. Ball Madness
 
+    Initially, one urn contains all black balls, the other urn contains all white
+    balls.  Then at subsequent time intervals (labeled i = 1, 2, ...), a ball is
+    selected randomly from each urn and placed in the other urn (in other words
+    "exchanged").  Obviously at i = 1, this results in one black ball being placed
+    in the previously all white urn and vice versa.  For subsequent values of i,
+    the color of ball is dependent on which ball is randomly selected from the
+    urn.  The objective is to graph the number of black balls as function of i.
+    How rapidly does the proportion of black balls in urn 1 approach 0.5 as a
+    function of N, the total number of black balls in urn 1 at i = 0?  Also, how
+    does the proportion vary as a function of N?
+
 Chapter 9. Who Pays for the Coffee?
 
 Chapter 10. The Chess Champ versus the Gunslinger
