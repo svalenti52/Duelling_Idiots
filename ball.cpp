@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <random>
 #include <algorithm>
@@ -13,7 +14,7 @@ class Urn
 {
     std::vector<bool> urn;
 public:
-    Urn(bool isBlack)
+    explicit Urn(bool isBlack)
         {
         for (int ix = 0; ix < nr_balls; ++ix)
             urn.push_back(isBlack);
@@ -45,7 +46,7 @@ int main()
 
     std::vector<int> results;
 
-    for (int ix = 0; ix < 400; ++ix)
+    for (int ix = 0; ix < 1000; ++ix)
     {
         results.push_back(urn_init_black.count());
         int black_index = x(dre);
@@ -60,4 +61,13 @@ int main()
     for (int y : results)
         std::cout << y << ' ';
     std::cout << '\n';
+
+    std::ofstream o("/home/svale/graph/ball.txt");
+
+    // o << "Count" << '\n';
+    for (int y : results) {
+        o << y;
+        if (!o.eof())
+            o << '\n';
+    }
 }
