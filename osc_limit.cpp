@@ -41,16 +41,17 @@ int main()
 	{
 		//auto C = urd(dre);
 		auto A = urd(dre);
+        auto A1 = urd(dre);
 		auto B = urd(dre);
 		auto C = urd(dre);
 
 		auto first_coefficient = B / A;
-		auto second_coefficient = C / A;
+		auto second_coefficient = C / A1;  // make independent
 
-		if ( first_coefficient * first_coefficient >= 4.0 * second_coefficient )
+		if ( B * B >= 4.0 * A * C )
 			prob_decay_total += 1.0;
 
-		if ( B * B >= 4.0 * C )
+		if ( first_coefficient * first_coefficient >= 4.0 * second_coefficient )
 			prob_decay_partial += 1.0;
 
 
