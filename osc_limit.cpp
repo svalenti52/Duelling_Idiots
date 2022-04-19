@@ -10,6 +10,11 @@
  * random over the unit interval). Fully random refers to the quadratic
  * equation with Ax^2 + Bx + C = 0 ( with A, B, and C independently
  * random over the unit interval).
+ *
+ * Actually need to consider three different cases:
+ * 1. The full random case: coefficients A, B, and C are all random.
+ * 2. The "partial" random case: equivalent to having A and A1 independent, dividing B and C, respectively.
+ * 3. The A = 1 case, B and C random.
  */
 
 // osc_limit.cpp
@@ -21,7 +26,7 @@
 
 int main()
 {
-	const int nr_trials = 1'000'000;
+	const int nr_trials = 10'000'000;
 	std::default_random_engine dre;
 	std::uniform_real_distribution<double> urd(0.0,1.0);
 	dre.seed(0);
@@ -36,6 +41,7 @@ int main()
 
 	double prob_decay_total = 0.0;
 	double prob_decay_partial = 0.0;
+    double prob_decay_monoA = 0.0;
 
 	for ( int trial_ix =0; trial_ix < nr_trials; ++trial_ix )
 	{
@@ -54,7 +60,8 @@ int main()
 		if ( first_coefficient * first_coefficient >= 4.0 * second_coefficient )
 			prob_decay_partial += 1.0;
 
-
+        if ( B * B >= 4.0 *C )
+            prob_decay_monoA += 1.0;
 
 		histogram1.increment_if_in_range(B/A);
 		histogram2.increment_if_in_range(C/A);
@@ -76,4 +83,7 @@ int main()
 
 	std::cout << "Probability of decay (real discriminant) for partial random quadratic = "
 			  << prob_decay_partial /static_cast<double>(nr_trials) << '\n';
+
+    std::cout << "Probability of decay (real discriminant) for mono A random quadratic = "
+              << prob_decay_monoA /static_cast<double>(nr_trials) << '\n';
 }
