@@ -11,8 +11,8 @@
 
 int main(int argc, char* argv[])
 {
-	int seed = 0;
-	if ( argc == 2 ) seed = std::atoi(argv[1]);
+	long seed = 0;
+	if ( argc == 2 ) seed = std::strtol(argv[1], nullptr, 10);
 
 	std::default_random_engine dre;
 	dre.seed(static_cast<unsigned long>(seed));

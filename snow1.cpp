@@ -16,14 +16,14 @@
 
 int main(int argc, char* argv[])
 {
-	int seed = 0;
-	if ( argc == 2 ) seed = std::atoi(argv[1]);
+	long seed = 0;
+	if ( argc == 2 ) seed = std::strtol(argv[1], nullptr, 10);
 
 	std::default_random_engine dre;
 	dre.seed(static_cast<unsigned long>(seed));
 	std::uniform_real_distribution<double> uniform_dist_over_1(0.0,1.0);
 
-	const int nr_bins = 100'000;
+	const int nr_bins = 200'000;
 	std::vector<double> vec_dbl;
 	std::vector<int> vec_int(nr_bins, 0);
 	const double bin_width = 1.0 / static_cast<double>(nr_bins);

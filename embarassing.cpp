@@ -40,7 +40,7 @@ int main(int argc, char** argv)
     vector<person> people;
 
     for ( int ix = 0; ix < nr_people; ++ix )
-        people.push_back(ix < nr_people_embarrassing);
+        people.emplace_back(ix < nr_people_embarrassing);
 
     double cumulative_embarrassing = 0.0;
 
@@ -67,7 +67,7 @@ int main(int argc, char** argv)
         cumulative_embarrassing += static_cast<double>(how_many_embarrassing);
     }
 
-    double cumulative_people = static_cast<double>(nr_trials);
+    auto cumulative_people = static_cast<double>(nr_trials);
 
     cout << "Number of people reporting embarrassing act = " << cumulative_embarrassing/cumulative_people << '\n';
     cout << "According to numbers should be 6230 reported using probabilistic mechanism.\n";
