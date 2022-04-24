@@ -17,7 +17,7 @@
 #include <iostream>
 #include <val/montecarlo/Chronology.h>
 
-bool is_series_closed( int nr_switches_per_layer, double ps_closed,
+bool is_series_closed( long nr_switches_per_layer, double ps_closed,
 	std::default_random_engine& dre,
 	std::uniform_real_distribution<double>& uni_dist )
 {
@@ -45,8 +45,8 @@ int main(int argc, char* argv[])
 			return 1;
 		}
 
-	int nr_switches_per_layer = std::atoi(argv[1]);
-	double prob_switch_closed = std::atof(argv[2]);
+	long nr_switches_per_layer = std::strtol(argv[1], nullptr, 10);
+	double prob_switch_closed = std::strtod(argv[2], nullptr);
 
 	int nr_trials = 1'000'000;
 	int nr_glows = 0;

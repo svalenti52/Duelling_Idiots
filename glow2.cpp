@@ -26,7 +26,7 @@ class Switches {
 public:
 	std::deque<bool> switch_closed;
 public:
-	Switches(int nr_switches) {
+	explicit Switches(long nr_switches) {
 		for ( int ix = 0; ix < nr_switches; ++ix )
 			switch_closed.push_back(false);
 	}
@@ -40,8 +40,8 @@ int main(int argc, char* argv[])
 			return 1;
 		}
 
-	int nr_switch_per_layer = std::atoi(argv[1]);
-	double prob_switch_closed = std::atof(argv[2]);
+	long nr_switch_per_layer = std::strtol(argv[1], nullptr, 10);
+	double prob_switch_closed = std::strtod(argv[2], nullptr);
 
 	int nr_trials = 1'000'000;
 	int nr_glows = 0;
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
                     interior_series_switches.switch_closed.end(),
                     [](bool val) { return val; } );
 
-				if ( parallel_switch == true )
+				if ( parallel_switch )
                     break;  // break because it is a parallel component
 			}
 
