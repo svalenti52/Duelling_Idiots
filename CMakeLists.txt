@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.7)
 project(duelling_idiots)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
 add_executable(EMBARRASSING embarassing.cpp)
 add_executable(BASEBALL baseball.cpp)
@@ -22,3 +22,4 @@ add_executable(BLIND_SPIDER1 blind_spider1.cpp)
 add_executable(BLIND_SPIDER_MCS blind_spider_MCS.cpp)
 add_executable(POISSON poisson.cpp)
 add_executable(BALL ball.cpp)
+add_executable(BBSEASON bbseason.cpp)
