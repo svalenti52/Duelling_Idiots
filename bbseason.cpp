@@ -18,10 +18,14 @@
 using u64 = uint64_t;
 using namespace boost::math;
 
+//===============================================
+
 double expected_value(u64 n, double p)
 {
     return n * p;
 }
+
+//===============================================
 
 double binomial_sum_greater_than(u64 n, u64 k, double p)
 {
@@ -36,50 +40,31 @@ double binomial_sum_greater_than(u64 n, u64 k, double p)
     return binomial_sum;
 }
 
+//===============================================
+//===============================================
+
 int main()
 {
     std::vector<double> v(100, 0.0);
     std::iota(v.begin(), v.end(), 1.0);
 
-    std::vector<double> numerator, denominator;
-    std::ranges::transform(v.begin(), v.end(), v.begin(), [](double x) {return x / 100.0;});
-    std::ranges::transform(v, std::back_inserter(numerator), [](double x)
-        {return std::ceil(expected_value(81, x));});
-    std::ranges::transform(v, std::back_inserter(denominator), [](double x)
-        {return std::ceil(expected_value(162, x));});
+    std::vector<double> N_100, D_100, R_100;
 
-    std::vector<double> N, D;
+
+    std::vector<double> vec_100(100, 0.0);
+    std::iota(vec_100.begin(), vec_100.end(), 1.0);
+
+    auto frac_100 = vec_100 | std::views::transform([](double x){return x / 100.0; });
+    auto num = frac_100 | std::views::transform([](double x) {return std::ceil(expected_value(81, x));});
+    auto den = frac_100 | std::views::transform([](double x) {return std::ceil(expected_value(162, x));});
 
     for (u64 ix = 0; ix < v.size(); ++ix)
-        N.push_back(binomial_sum_greater_than(81, numerator[ix], (ix+1)/100.0));
+        N_100.push_back(binomial_sum_greater_than(81, num[ix], (ix + 1) / 100.0));
     for (u64 ix = 0; ix < v.size(); ++ix)
-        D.push_back(binomial_sum_greater_than(162, denominator[ix], (ix+1)/100.0));
+        D_100.push_back(binomial_sum_greater_than(162, den[ix], (ix + 1) / 100.0));
+    for (u64 ix = 0; ix < N_100.size(); ++ix)
+        R_100.push_back(N_100[ix] / D_100[ix]);
 
-    std::vector<double> R;
-    for (u64 ix = 0; ix < N.size(); ++ix)
-        R.push_back(N[ix] / D[ix]);
-/*
-    auto numerator = v
-            | std::views::transform([](double x){return x / 100.0; })
-            | std::views::filter([](double x) {return x != 0.0;})
-            | std::views::transform([](double x) {return expected_value(81, x);})
-            | std::views::transform([](double x) {return std::ceil(x);});
-*/
-
-/*
-    auto denominator = v
-                     | std::views::transform([](double x){return x / 100.0; })
-                     | std::views::filter([](double x) {return x != 0.0;})
-                     | std::views::transform([](double x) {return expected_value(162, x);})
-                     | std::views::transform([](double x) {return std::ceil(x);});
-*/
-
-//    std::vector<double> num, den;
-//    for (u64 ix = 0; ix < w.size(); ++ix) {
-//        num.push_back(binomial_sum_greater_than(81, numerator[ix], probability_single));
-//        den.push_back(binomial_sum_greater_than(162, denominator[ix], probability_single));
-//    }
-    //auto numerator_bc81 = numerator | std::views::transform([](u64 d) {return binomial_sum_greater_than(81, )})
-    for (double x : R)
+    for (double x : R_100)
         std::cout << x << ' ';
 }
