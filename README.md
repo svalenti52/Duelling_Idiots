@@ -50,6 +50,10 @@ Chapter 3. Will the Light Bulb Glow?
     
 Chapter 4. The Underdog and the World Series
 
+    Given that the stronger team has a probability p, (p > .5), of winning,
+    what is the probability that the weaker team wins the seven game series?
+    Also, give the probability profile of the series length (for 4 through 7).
+
     Associated file: baseball.cpp.
 
 Chapter 5. The Curious Case of the Snowy Birthdays
