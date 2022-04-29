@@ -25,12 +25,14 @@ int main(int argc, char* argv[])
 	std::default_random_engine dre;
     std::uniform_real_distribution<double> uniform_dist_over_1(0.0,1.0);
 
-	const int nr_trials = 10000000;
+	const int nr_trials = 10'000'000;
 
 	int four_game_series = 0;
 	int five_game_series = 0;
 	int six_game_series = 0;
 	int seven_game_series = 0;
+
+    int weaker_wins_series = 0;
 
 	for ( int ix = 0; ix < nr_trials; ++ix )
 	{
@@ -42,8 +44,13 @@ int main(int argc, char* argv[])
 				++stronger_wins;
 			else
 				++weaker_wins;
-			if ( stronger_wins == 4 || weaker_wins == 4 )
-				break;
+			if ( weaker_wins == 4 )
+            {
+                ++weaker_wins_series;
+                break;
+            }
+            else if ( stronger_wins == 4 )
+                break;
 		}
 		int tot_wins = stronger_wins + weaker_wins;
 		switch (tot_wins)
@@ -64,6 +71,10 @@ int main(int argc, char* argv[])
 				std::cout << "should not reach here...\n";
 		}
 	}
+
+    std::cout << "\nProbability weaker team wins series = " << static_cast<double>(weaker_wins_series) /
+            static_cast<double>(nr_trials) << " for stronger team probability of winning one game = "
+            << stronger_wins_prob << "\n\n";
 
 	std::cout << "Four game series == " <<
 		static_cast<double>(four_game_series) /
