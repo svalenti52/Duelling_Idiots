@@ -83,8 +83,9 @@ Chapter 5. The Curious Case of the Snowy Birthdays
     the slope is equal to e^(-gamma) (Euler's number followed by Euler's constant).
 
     4) Inscribe a circle within the unit square. Then pick points at random within
-    the square (S) and determine whether it is also contained within the circle (C).
-    The value C/S * 4 will approximate pi.
+    the square (represent the number of points in the square by S) and determine
+    whether it is also contained within the circle (represent the number of points
+    in the circle by C). The value C/S * 4 will approximate pi.
 
     Associated files: snow1.cpp, snow1_1.cpp, snow2.cpp, snow3.cpp, and snow_pi.cpp.
 
