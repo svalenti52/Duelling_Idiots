@@ -17,6 +17,7 @@
 
 #include <random>
 #include <iostream>
+#include <math.h>
 
 int main(int argc, char* argv[])
 {
@@ -37,7 +38,7 @@ int main(int argc, char* argv[])
 	}
 
 	const int nr_trials = 5'000'000;
-	const int nr_slices = 10;
+	const int nr_slices = 20;
 
 	std::vector<int> cum_bin(nr_bins, 0);
 
@@ -64,8 +65,13 @@ int main(int argc, char* argv[])
 		std::cout << "  " << value;
 	std::cout << "\n\n";
 
-	std::cout << "cumulative probability at 1 = " <<
-		static_cast<double>(cum_bin[99]) /
-		static_cast<double>(nr_trials) << '\n';
+    double e_neg_gamma = static_cast<double>(cum_bin[99]) /
+                   static_cast<double>(nr_trials);
 
+	std::cout << "cumulative probability at 1 = " <<
+        e_neg_gamma << '\n';
+
+    double e = e_neg_gamma * exp(1.57721566490);
+
+    std::cout << "approximate value of e = " << e << '\n';
 }

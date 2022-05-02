@@ -58,7 +58,35 @@ Chapter 4. The Underdog and the World Series
 
 Chapter 5. The Curious Case of the Snowy Birthdays
 
-    Associated files: snow1.cpp, snow2.cpp, and snow3.cpp.
+    Actually three different methods of approximating e and one method of
+    approximating pi. 
+    
+    1) Divide the unit interval into A equal-sized intervals (in snow1.cpp,
+    200,000 is selected for A).  Then randomly generate A numbers, fitting them
+    into the appropriate interval based on the value being within the interval.
+    Let I(0) be the count of intervals containing 0 of the random numbers.
+    The ratio A/I(0) will approximate the value of e.
+    snow1_1.cpp speeds up the process by randomly selecting 1,000,000 numbers
+    from [0,999999] and incrementing the count according to the number chosen.
+    
+    2) From the unit interval, count a sequence of randomly selected real numbers
+    till their sum exceeds 1. A large number of such sequences will find that the
+    count approximately averages to e.
+
+    3) Subdivide the unit interval by the following method: pick a random number from
+    the unit interval and let that form the right edge of the left subinterval; then
+    repeat the process substituting the new left subinterval for the unit interval.
+    Obviously each subsequent left subinterval becomes smaller than the previous
+    left subinterval. Do this about 10 or 20 times, then take the sum of subsequent
+    right edges of these left subintervals. Plotting the CDF of this sum, observe
+    that it is approximately linear in the unit interval. In the text is given that
+    the slope is equal to e^(-gamma) (Euler's number followed by Euler's constant).
+
+    4) Inscribe a circle within the unit square. Then pick points at random within
+    the square (S) and determine whether it is also contained within the circle (C).
+    The value C/S * 4 will approximate pi.
+
+    Associated files: snow1.cpp, snow1_1.cpp, snow2.cpp, snow3.cpp, and snow_pi.cpp.
 
 Chapter 6. When Human Flesh Begins to Fail
 
