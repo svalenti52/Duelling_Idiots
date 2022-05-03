@@ -7,11 +7,19 @@
 #include <numeric>
 #include <random>
 
+void print_0_01_to_1_00(std::vector<double>& v, std::string s) {
+    std::cout << s << '\n';
+    for (double x: v)
+        std::cout << x << ' ';
+    std::cout << "\n\n";
+}
+
+
 int main()
 {
-    std::default_random_engine dre(0);
+    std::default_random_engine dre(7);
     std::uniform_real_distribution<double> urd(0.0, 1.0);
-    const int nr_trials = 100'000;
+    const int nr_trials = 1'000'000;
 
     std::vector<double> no_ends;
     std::vector<double> one_end;
@@ -53,13 +61,10 @@ int main()
         two_ends.push_back(static_cast<double>(nr_two_end)/nr_trials);
     }
 
-    for (double x : no_ends)
-        std::cout << x << ' ';
-    std::cout << '\n';
-    for (double x : one_end)
-        std::cout << x << ' ';
-    std::cout << '\n';
-    for (double x : two_ends)
-        std::cout << x << ' ';
-    std::cout << '\n';
+    std::cout << "\nResulting Probabilities for Needle Randomly Dropped in Circle\n" <<
+        "Needle Length 2A, Circle Radius R\n" <<
+        "For 100 Ratios A/R (Ratio = [0.01, 0.02, 0.03,..., 1.00])\n\n";
+    print_0_01_to_1_00(no_ends, "No Ends Over Edge");
+    print_0_01_to_1_00(one_end, "One End Over Edge");
+    print_0_01_to_1_00(two_ends, "Two Ends Over Edge");
 }
