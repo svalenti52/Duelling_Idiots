@@ -82,10 +82,12 @@ Chapter 5. The Curious Case of the Snowy Birthdays
     that it is approximately linear in the unit interval. In the text is given that
     the slope is equal to e^(-gamma) (Euler's number followed by Euler's constant).
 
-    4) Inscribe a circle within the unit square. Then pick points at random within
-    the square (represent the number of points in the square by S) and determine
-    whether it is also contained within the circle (represent the number of points
-    in the circle by C). The value C/S * 4 will approximate pi.
+    4) Inscribe a circle centered at the origin within a 2x2 square (the radius of
+    the circle is 1). Then pick points at random within the quarter square that
+    contains the unit interval for the x and y axes. Let S represent the total count
+    of random points.  Let C represent the count of the of the subset of points that
+    also fall within the circle (this section of the circle has area pi/4).
+    The value C/S * 4 will approximate pi.
 
     Associated files: snow1.cpp, snow1_1.cpp, snow2.cpp, snow3.cpp, and snow_pi.cpp.
 
