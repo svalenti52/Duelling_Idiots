@@ -3,10 +3,6 @@
  * after a set number of coin flips.
  */
 
-// sameflips.cpp
-
-/*
-*/
 
 #include <iostream>
 #include <vector>
@@ -17,7 +13,7 @@ int main(int argc, char* argv[])
 	std::vector<int> nr_people_set{2, 3, 4};
 	std::vector<int> nr_flips_set{10, 50, 100, 150};
 
-	std::default_random_engine dre;
+	std::default_random_engine dre(7);
 	std::uniform_real_distribution<double> uniform_dist_over_1(0.0,1.0);
 
 	const int nr_trials = 10'000;

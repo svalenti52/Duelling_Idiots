@@ -91,7 +91,23 @@ Chapter 5. The Curious Case of the Snowy Birthdays
 
 Chapter 6. When Human Flesh Begins to Fail
 
+    N people are flipping independent fair coins n times each. What is the probability
+    that they all have the same number of heads come up?
+    Calculate for N = 2, 3, 4 and n = 10, 50, 100, 150.
+    The title of the chapter is due to the "overwhelming" amount of number-crunching
+    required to do the problem without a computer.
+
+    Associated files: sameflips.cpp
+
 Chapter 7. Baseball Again, and Mortal Flesh, Too
+
+    Given that a baseball has a probability p of winning a single game (a simplifying
+    assumption for sure), what is the probability of winning 81p games after half a
+    season (assuming a 162 game season)? The same question applies for winning 162p
+    games for a full season. For p = .01, .02, .., 1.0, graph the ratio of
+    81p / 162p, explaining the unexpected strangeness of the graph.
+
+    Associated files: bbseason.cpp
 
 Chapter 8. Ball Madness
 
@@ -106,7 +122,18 @@ Chapter 8. Ball Madness
     function of N, the total number of black balls in urn 1 at i = 0?  Also, how
     does the proportion vary as a function of N?
 
+    Associated files: ball.cpp
+
 Chapter 9. Who Pays for the Coffee?
+
+    This a form of odd-man out, i.e., N people each simultaneously flip a
+    a coin and if there is single head or tail among them, that person
+    has to pay for coffee for all. How many simultaneous flip events on
+    average are required to determine the payer? A further question is
+    supposing there is one person with an unfair coin: how does this affect
+    the outcome?
+
+    Associated files:    
 
 Chapter 10. The Chess Champ versus the Gunslinger
 
