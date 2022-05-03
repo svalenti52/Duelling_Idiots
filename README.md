@@ -135,11 +135,19 @@ Chapter 9. Who Pays for the Coffee?
     supposing there is one person with an unfair coin: how does this affect
     the outcome?
 
-    Associated files:    
+    Associated files: coffee.cpp
 
 Chapter 10. The Chess Champ versus the Gunslinger
 
+    What a difference a draw makes! What is the probability that a chess
+    champ wins a 6 game match? Or ties it? This is oddly difficult for
+    an analytical solution even though it seems that it should be simple.
+
+    Associated files: champ.cpp
+
 Chapter 11. A Different Slice of Probabilistic Pi
+
+    Associated files: needle.cpp
 
 Chapter 12. When Negativity is a No-No
 
