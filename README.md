@@ -147,11 +147,25 @@ Chapter 10. The Chess Champ versus the Gunslinger
 
 Chapter 11. A Different Slice of Probabilistic Pi
 
+    This is a needle and circular table top problem: randomly dropping a
+    needle onto the table top, what is the probability that one end of the
+    needle sticks out over the edge of the table top? Also consider the
+    other two events: that of two ends protuding and that of the needle
+    being completely contained by the interior of the table top.
+
     Associated files: needle.cpp
 
 Chapter 12. When Negativity is a No-No
 
+    What is the PDF of Z = X / (X - Y) where X and Y are uniformly distributed
+    random variables on the unit interval?
+
+    Associated files: negativity.cpp
+
 Chapter 13. The Power of Randomness
+
+    What is the PDF of Z = X ^ Y where X and Y are uniformly distributed
+    random variables on the unit interval?
 
 Chapter 14. The Random Ratio
 
