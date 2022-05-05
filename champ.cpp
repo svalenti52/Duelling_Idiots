@@ -33,19 +33,19 @@ int main()
 
     //===========================================
     auto condition_met_win{[prob_win, prob_draw](DistributionReal& gameset, double& matchres, DRE& dre)
-                            {
-                                int matchresult = 0;
-                                for (double x : gameset.events)
-                                {
-                                    if (x < prob_win)
-                                        matchresult += 2;
-                                    else if (x < prob_win+prob_draw)
-                                        ++matchresult;
-                                }
-                                gameset.reload_random_values(dre);
-                                if (matchresult > 6) return true;
-                                return false;
-                            }};
+        {
+            int matchresult = 0;
+            for (double x : gameset.events)
+            {
+                if (x < prob_win)
+                    matchresult += 2;
+                else if (x < prob_win+prob_draw)
+                    ++matchresult;
+            }
+            gameset.reload_random_values(dre);
+            if (matchresult > 6) return true;
+            return false;
+        }};
     //===========================================
 
 
