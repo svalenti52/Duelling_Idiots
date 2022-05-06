@@ -1,5 +1,5 @@
 //
-// Created by svale on 5/5/2022.
+// Created by svale on 5/6/2022.
 //
 
 #include <random>
@@ -9,7 +9,7 @@
 
 double f(double x, double y)
 {
-    return x / (x - y);
+    return std::pow(x, y);
 }
 
 int main()
@@ -18,7 +18,7 @@ int main()
     std::uniform_real_distribution<double> urd(0.0, 1.0);
 
     std::vector<double> f_values;
-    Histogram<double, int> histogram(-3.0, 3.0, 0.1);
+    Histogram<double, int> histogram(0.0, 1.0, 0.01);
     for (int ix = 0; ix < 100'000; ++ix)
         f_values.push_back(f(urd(dre), urd(dre)));
 

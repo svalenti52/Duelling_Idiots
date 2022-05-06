@@ -167,6 +167,8 @@ Chapter 13. The Power of Randomness
     What is the PDF of Z = X ^ Y where X and Y are uniformly distributed
     random variables on the unit interval?
 
+    Associated files: power.cpp
+
 Chapter 14. The Random Ratio
 
     A capacitor discharging in the presence of resistance and an inductor
@@ -189,6 +191,13 @@ Chapter 14. The Random Ratio
     Associated file: osc_limit.cpp.
 
 Chapter 15. An Inconceivable Difficulty
+
+    Given a probability p of having a boy (1 - p = q is the corresponding
+    probability of having a girl), how many children are expected till a
+    subsequent child matches the sex of first? What does the graph look
+    like for p in the range [0, 0.01, ..., 1.0]?
+
+    Associated file: inconceivable.cpp
 
 Chapter 16. The Unsinkable Tub is Sinking! How to Find Her, Fast
 
