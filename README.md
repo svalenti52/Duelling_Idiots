@@ -216,6 +216,19 @@ Chapter 16. The Unsinkable Tub is Sinking! How to Find Her, Fast
 
 Chapter 17. A Walk in the Garden
 
+    Don't know where the title came from on this one.
+    Consider the unit square with one side placed along the x-axis, aligned
+    with the [0, 1] segment.
+    Select two random real numbers, one from the range [0, 1], the other
+    from the range [0, pi]. Label the first random number 'x' and the second
+    'ang'.  Locate x on the x-axis (along one side of the unit square) and then
+    take the line segment at an angle of ang at x, terminating where it intersects
+    with the other edge of the unit square. The length of the resulting segment
+    is the item of interest. Generate 100,000 of these random pairs (x, ang) and
+    form a histogram of the counts of the segments lengths (show the PDF and CDF).
+
+    Associated file: garden.cpp
+
 Chapter 18. Two Flies Stuck on a Piece of Flypaper - How Far Apart?
 
 Chapter 19. The Blind Spider and the Fly
