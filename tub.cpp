@@ -51,6 +51,8 @@ std::ostream& operator << (std::ostream& o, Prob_by_nr_ships& pbns)
     return o;
 }
 
+//===============================================
+
 int main()
 {
     using namespace std;
@@ -68,22 +70,21 @@ int main()
 
     vector<Prob_by_nr_ships> nr_ships_send_to_isl_north;
 
-    for (int ix = 0; ix < prob_isl_north_prof.size(); ++ix)
+    for (int isl_nrth_prob = 0; isl_nrth_prob < prob_isl_north_prof.size(); ++isl_nrth_prob)
     {
         vector<Prob_by_nr_ships> potential_max_by_nr_ships;
         for (int nr_ships = 0; nr_ships < prob_by_nr_ships_prof.size(); ++nr_ships)
         {
-            double north = prob_by_nr_ships_prof[nr_ships] * prob_isl_north_prof[ix];
-            double south = prob_by_nr_ships_prof[total_nr_ships - nr_ships] * prob_isl_south_prof[ix];
+            double north = prob_by_nr_ships_prof[nr_ships] * prob_isl_north_prof[isl_nrth_prob];
+            double south = prob_by_nr_ships_prof[total_nr_ships - nr_ships] * prob_isl_south_prof[isl_nrth_prob];
             potential_max_by_nr_ships.emplace_back(Prob_by_nr_ships(nr_ships, north + south));
         }
-        for (Prob_by_nr_ships p : potential_max_by_nr_ships)
-            cout << p.get_nr_ships() << '-' << p << ' ';
-        cout << '\n';
+
         auto max_ship_prob = max_element(begin(potential_max_by_nr_ships), end(potential_max_by_nr_ships));
-        nr_ships_send_to_isl_north.emplace_back(max_ship_prob->get_nr_ships(), ix);
+        nr_ships_send_to_isl_north.emplace_back(max_ship_prob->get_nr_ships(), isl_nrth_prob);
     }
-    for (Prob_by_nr_ships& p : nr_ships_send_to_isl_north)
+    for (Prob_by_nr_ships& p : nr_ships_send_to_isl_north) {
         cout << p.get_nr_ships() << ' ';
+    }
     cout << '\n';
 }

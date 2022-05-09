@@ -150,7 +150,7 @@ Chapter 11. A Different Slice of Probabilistic Pi
     This is a needle and circular table top problem: randomly dropping a
     needle onto the table top, what is the probability that one end of the
     needle sticks out over the edge of the table top? Also consider the
-    other two events: that of two ends protuding and that of the needle
+    other two events: that of two ends protruding and that of the needle
     being completely contained by the interior of the table top.
 
     Associated files: needle.cpp
@@ -200,6 +200,19 @@ Chapter 15. An Inconceivable Difficulty
     Associated file: inconceivable.cpp
 
 Chapter 16. The Unsinkable Tub is Sinking! How to Find Her, Fast
+
+    A radio distress signal was received from a ship that it was near one
+    of two islands (North and South). N rescue ships are sent,
+    each with an individual probability s of finding the ship. Note that s
+    is fixed and the search is independent for each ship. The problem
+    is that of allocating a number of ships to each island as a function
+    of the probability that the distressed ship is at that island. For
+    [0, 0.01, 0.02, ..., 1.0] being the probability of the distressed ship
+    being at the North island, determine the allocation that maximizes the
+    probability the distressed ship will be found. Calculate for N = 13, s
+    = 0.2; N = 40, s = 0.2; N = 40, s = 0.5.
+
+    Associated file: tub.cpp
 
 Chapter 17. A Walk in the Garden
 
