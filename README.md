@@ -231,6 +231,12 @@ Chapter 17. A Walk in the Garden
 
 Chapter 18. Two Flies Stuck on a Piece of Flypaper - How Far Apart?
 
+    Two flies land at random on a unit square.  What is the probability that
+    they are greater that 1 unit apart? The same question is also asked for
+    the circle of area 1 (hence radius of 1/sqrt(pi)).
+
+    Associated files: fly_sqr.cpp, fly_crcl.cpp
+
 Chapter 19. The Blind Spider and the Fly
 
 Chapter 20. Reliably Unreliable
