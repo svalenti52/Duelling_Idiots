@@ -239,6 +239,34 @@ Chapter 18. Two Flies Stuck on a Piece of Flypaper - How Far Apart?
 
 Chapter 19. The Blind Spider and the Fly
 
+    A blind spider has a strange kind of web represented by a set of states
+    and transitions (specifically 8 states or "places" on the web). A fly lands
+    on the web becoming stuck; it dies for some reason, so the spider has to randomly
+    search for the fly.  Given that the fly is in state 1 and the spider starts
+    in state 0, and given the following set of transitions, what is the expected
+    number of transitions that the spider will make till it reaches the fly?
+    State 0 transitions to 3, 6, 7 (spider begins search here)
+    State 1 transitions to 2, 8 (fly is here)
+    State 2 transitions to 1, 4, 7
+    State 3 transitions to 0
+    State 4 transitions to 2, 5
+    State 5 transitions to 4, 6
+    State 6 transitions to 0, 5, 7
+    State 7 transitions to 0, 2, 6, 8
+    State 8 transitions to 1, 7
+
+    Associated files: blind_spider.cpp, blind_spider1.cpp, blind_spider_MCS.cpp
+
 Chapter 20. Reliably Unreliable
+
+    This problem deals with the probability of electronic system failure and
+    schemes with multiple electronic systems that provide redundancy in an
+    attempt to reduce the chances of failure.
+    Given is the probability of single system failure by time T:  1 - e^(-aT)
+    where 'a' is a positive constant characteristic of the system. This
+    problem compares the performance of one system and three systems (where
+    majority rule is then observed, if one system fails, the other two still
+    provide the correct feedback for decision making). Also assume a = 1/100
+    and compare results for T = [0, 200].
 
 Chapter 21. When Theory Fails, There is Always the Computer
