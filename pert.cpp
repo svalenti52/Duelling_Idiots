@@ -10,6 +10,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
+#include <val/montecarlo/Histogram.h>
 
 struct Tasks
 {
@@ -57,10 +58,11 @@ int main()
     const int task7 = 6;
     const int task8 = 7;
 
-    const int nr_events = 100;
+    const int nr_events = 1'000;
 
     vector<int> work_array;
     vector<int> critical_task(nr_tasks, 0);
+    Histogram<int, int> histogram(6, 13, 1);
 
     // Task1
     vector<Tasks> tasks;
@@ -141,9 +143,12 @@ int main()
         }
 
 
-        for (int jx = 0; jx < nr_tasks; ++jx)
+        for (int jx = 0; jx < nr_tasks; ++jx) {
             if (tasks[jx].early_start == tasks[jx].late_start)
                 ++critical_task[jx];
+            if (jx == nr_tasks - 1)
+                histogram.increment_if_in_range(tasks[jx].late_finish);
+        }
 
         for (Tasks& task : tasks)
         {
@@ -160,4 +165,6 @@ int main()
         cout << cp << ' ';
     cout << '\n';
 
+    cout << "\ntask completion results\n";
+    cout << histogram << '\n';
 }
