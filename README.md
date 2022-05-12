@@ -269,4 +269,14 @@ Chapter 20. Reliably Unreliable
     provide the correct feedback for decision making). Also assume a = 1/100
     and compare results for T = [0, 200].
 
+    Associated file: reliable.cpp
+
 Chapter 21. When Theory Fails, There is Always the Computer
+
+    This problem has to with a probabilistic pert chart (one of my least
+    favorite topics, due to experience with Microsoft Project).
+    Given a certain set of tasks and possible times to complete, plot a
+    critical likelihood for each task. Also plot a histogram of project
+    completion counts.
+
+    Associated file: pert.cpp
